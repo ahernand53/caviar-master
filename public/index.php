@@ -4,9 +4,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$baseDiir = str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
-$baseURL = 'http://' . $_SERVER['HTTP_HOST'] . $baseDiir;
-define('BASE_URL', $baseURL);
+$baseDir = str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+$baseUrl = 'http://' . $_SERVER['HTTP_HOST'] . $baseDir;
+define('BASE_URL', $baseUrl);
 
 
 require '../vendor/autoload.php';
@@ -25,9 +25,7 @@ use Phroute\Phroute\RouteCollector;
 
 $router = new RouteCollector();
 
-$router->get('/', function () {
-    return render('../resources/views/index.twig');
-});
+$router->controller('/', App\controllers\IndexControllers::class);
 
 $router->get('/menu', function () {
     return render('../resources/views/menu.twig');
