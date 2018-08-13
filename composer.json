@@ -7,6 +7,7 @@
   "require": {
     "phroute/phroute": "v2.1.0",
     "stolz/assets": "0.1.11",
-    "twig/twig": "2.x-dev"
+    "twig/twig": "2.x-dev",
+    "illuminate/database": "5.4.x-dev"
   }
 }

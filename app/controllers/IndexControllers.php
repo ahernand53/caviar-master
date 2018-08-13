@@ -2,6 +2,8 @@
 namespace App\controllers;
 
 
+use App\models\Plate;
+
 class indexControllers extends BaseController
 {
     public function getIndex(){
@@ -21,7 +23,17 @@ class indexControllers extends BaseController
             'css' => $assest->css(),
             'js' => $assest->js(),
         ];
+
         return $this->render('index.twig', ['links' => $links]);
+    }
+
+    public function getMenu(){
+
+        $plates = Plate::all();
+        return$this->render('menu.twig', [
+            'plates' => $plates,
+        ]);
+
     }
 
 }
