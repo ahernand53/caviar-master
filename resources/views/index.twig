@@ -1,5 +1,7 @@
 {% extends "layouts/app.twig" %}
 
+
+
 {% block content %}
 
 
@@ -21,7 +23,7 @@
                             <div class="hero-content">
                                 <h2>Lorem Ipsum</h2>
                                 <p>Morbi sed porta diam. Sed pulvinar cursus lorem, consectetur iaculis dolor scelerisque non. Praesent bibendum mauris risus, non aliquam tellus consectetur nec.</p>
-                                <a href="#" class="btn caviar-btn"><span></span> Reservation</a>
+                                <a href="#reservation" class="btn caviar-btn"><span></span> Reservation</a>
                             </div>
                         </div>
                     </div>
@@ -98,7 +100,7 @@
                         <h2>Special</h2>
                     </div>
                     <!-- btn -->
-                    <a href="{{ BASE_URL | url('menu') }}" class="btn caviar-btn"><span></span> View The Menu</a>
+                    <a href="{{ 'menu' | url }}" class="btn caviar-btn"><span></span> View The Menu</a>
                 </div>
             </div>
             <div class="row">
@@ -215,7 +217,7 @@
                 <div class="section-heading">
                     <h2>Reservation</h2>
                 </div>
-                <form action="#">
+                <form action="{{ BASE_URL }}" method="post">
                     <div class="row">
                         <div class="col-12 col-lg-6">
                             <input type="date" class="form-control">

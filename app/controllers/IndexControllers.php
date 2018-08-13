@@ -7,7 +7,7 @@ use App\models\Plate;
 class indexControllers extends BaseController
 {
     public function getIndex(){
-        $assest = new \Stolz\Assets\Manager();
+        /*$assest = new \Stolz\Assets\Manager();
         $assest->add([
             'bootstrap/bootstrap.min.js',
             'bootstrap/popper.min.js',
@@ -22,9 +22,13 @@ class indexControllers extends BaseController
         $links = [
             'css' => $assest->css(),
             'js' => $assest->js(),
-        ];
+        ];*/
 
-        return $this->render('index.twig', ['links' => $links]);
+        return $this->render('index.twig');
+    }
+
+    public function postIndex(){
+        return $this->render('index.twig');
     }
 
     public function getMenu(){
@@ -33,6 +37,12 @@ class indexControllers extends BaseController
         return$this->render('menu.twig', [
             'plates' => $plates,
         ]);
+
+    }
+
+    public function getContact(){
+
+        return $this->render('contact.twig');
 
     }
 
