@@ -16,14 +16,15 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 $capsule = new Capsule();
 
 $capsule->addConnection([
-    'driver'    => 'mysql',
-    'host'      => 'localhost:3306',
-    'database'  => 'caviar',
-    'username'  => 'root',
-    'password'  => 'Admin123!',
+    'driver'    => 'pgsql',
+    'host'      => 'ec2-54-235-160-57.compute-1.amazonaws.com',
+    'database'  => 'd3jdo8avvnpaa1',
+    'username'  => 'tspfaswklrgbkq',
+    'password'  => 'd68272752f8b547a01a1f9b7e024aadd81f9f8fbf4627fe8a056eaadacb7216c',
     'charset'   => 'utf8',
     'collation' => 'utf8_unicode_ci',
     'prefix'    => '',
+    'port'      => '5432'
 ]);
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
