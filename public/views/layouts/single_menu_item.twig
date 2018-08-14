@@ -1,0 +1,14 @@
+<div class="single_menu_item {{ plate.type }} wow fadeInUp">
+    <div class="d-sm-flex align-items-center">
+        <div class="dish-thumb" style="width: 200px">
+            <img src="{{ plate.image_url }}" alt="">
+        </div>
+        <div class="dish-description">
+            <h3>{{ plate.title }}</h3>
+            <p>{{ plate.content }}</p>
+        </div>
+        <div class="dish-value">
+            <h3>${{ plate.price }}</h3>
+        </div>
+    </div>
+</div>
