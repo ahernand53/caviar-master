@@ -3,6 +3,7 @@ namespace App\controllers;
 
 
 use App\models\Plate;
+use App\models\Special;
 
 class indexControllers extends BaseController
 {
@@ -24,7 +25,10 @@ class indexControllers extends BaseController
             'js' => $assest->js(),
         ];*/
 
-        return $this->render('index.twig');
+        $specials = Special::all();
+        return $this->render('index.twig', [
+            'specials' => $specials,
+        ]);
     }
 
     public function postIndex(){

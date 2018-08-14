@@ -830,6 +830,16 @@ li {
 
 /* Dish Menu Area CSS */
 
+.dish-img {
+    width: 288px;
+    height: 293px;
+}
+
+.dish-img img{
+    width: 100%;
+    height: 100%;
+}
+
 .caviar-dish-menu {
     padding-bottom: 200px;
     position: relative;

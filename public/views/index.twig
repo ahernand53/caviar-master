@@ -104,33 +104,20 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-sm-6 col-md-4">
-                    <div class="caviar-single-dish wow fadeInUp" data-wow-delay="0.5s">
-                        <img src="img/menu-img/dish-1.png" alt="">
-                        <div class="dish-info">
-                            <h6 class="dish-name">Lorem Ipsum Dolor Sit Amet</h6>
-                            <p class="dish-price">$45</p>
+                {% set time = 0 %}
+                {% for special in specials %}
+                    {% set time = time + 0.5 %}
+                    {% set plate = special.plate %}
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class="caviar-single-dish wow fadeInUp" data-wow-delay="{{ time }}s">
+                            <img src="{{ plate.image_url }}" alt="">
+                            <div class="dish-info">
+                                <h6 class="dish-name">{{ plate.title }}</h6>
+                                <p class="dish-price">{{ plate.price }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4">
-                    <div class="caviar-single-dish wow fadeInUp" data-wow-delay="1s">
-                        <img src="img/menu-img/dish-2.png" alt="">
-                        <div class="dish-info">
-                            <h6 class="dish-name">Lorem Ipsum</h6>
-                            <p class="dish-price">$45</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4">
-                    <div class="caviar-single-dish wow fadeInUp" data-wow-delay="1.5s">
-                        <img src="img/menu-img/dish-3.png" alt="">
-                        <div class="dish-info">
-                            <h6 class="dish-name">Lorem Ipsum Dolor Sit Amet</h6>
-                            <p class="dish-price">$45</p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
